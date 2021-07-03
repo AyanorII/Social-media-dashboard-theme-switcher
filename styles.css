@@ -1,0 +1,429 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 700;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #1D1F29;
+  line-height: 29.05px;
+}
+
+span {
+  color: #1D1F29;
+}
+
+.facebook {
+  color: #178FF5;
+}
+
+.instagram {
+  color: linear-gradient(135deg, #df4896 0%, #ee877e 49%, #fdc366 100%);
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.youtube {
+  color: #C4032B;
+}
+
+body.dark-mode, header.dark-mode {
+  background-color: #20222F;
+}
+
+.main-card.dark-mode, .sub-card.dark-mode {
+  background-color: #252B42 !important;
+}
+
+span.dark-mode, p.dark-mode {
+  color: #8C98C6;
+}
+
+.main-heading.dark-mode, .main-card__followers-num.dark-mode, .sub-card__today-num.dark-mode {
+  color: #FFF;
+}
+
+header {
+  background-color: #F7F9FF;
+  padding: 36px 25px 84px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0 0 30px 30px;
+}
+
+header .header-content {
+  width: 100%;
+  border-bottom: 1px solid #848BAB;
+  margin-bottom: 1rem;
+}
+
+header .header-content .main-heading {
+  font-weight: 700;
+}
+
+header .header-content .main-heading.dark-mode {
+  color: #FFF;
+}
+
+header .header-content .total-followers.dark-mode {
+  color: #8C98C6;
+}
+
+header .total-followers {
+  color: #63687D;
+  line-height: 17px;
+}
+
+header .dark-mode-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .dark-mode-container #flexSwitchCheckDefault {
+  width: 2.7rem;
+  height: 1.5rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #AEB3CB;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+}
+
+header .dark-mode-container #flexSwitchCheckDefault:checked {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e"), linear-gradient(135deg, #40db82 0%, #388fe7 100%);
+  background-color: white;
+  border: none;
+}
+
+main {
+  position: relative;
+  bottom: 2.8rem;
+}
+
+.followers-per-social-media {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(326px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  padding: 0 25px 46px;
+  /*It's not possible to create a gradient colored border, so
+    I had to wrap it in a div, give it the gradient color as the background
+    and use position relative to adjust*/
+}
+
+.followers-per-social-media .main-card {
+  padding: 32px 0 24px;
+  margin-bottom: 24px;
+  border: none;
+  border-top: 5px solid;
+  border-radius: 5px;
+  background-color: #F1F3FA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.followers-per-social-media .main-card__user {
+  font-size: 12px;
+}
+
+.followers-per-social-media .main-card__user::before {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+  font-size: 1.6rem;
+  padding-right: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.followers-per-social-media .main-card__followers-num {
+  font-size: 3.5rem;
+  line-height: 3rem;
+  letter-spacing: -2px;
+  margin: 28px 0 9px;
+}
+
+.followers-per-social-media .main-card__followers-type {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 5px;
+  line-height: 14.5px;
+  color: #63687D;
+  margin-bottom: 25px;
+}
+
+.followers-per-social-media .main-card__followers-today {
+  font-size: 12px;
+}
+
+.followers-per-social-media .main-card__followers-today.positive {
+  color: #1EB589;
+}
+
+.followers-per-social-media .main-card__followers-today.positive::before {
+  content: '\f106';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.followers-per-social-media .main-card__followers-today.negative {
+  color: #DC414C;
+}
+
+.followers-per-social-media .main-card__followers-today.negative::before {
+  content: '\f107';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.followers-per-social-media .main-card.facebook {
+  border-color: #178FF5;
+}
+
+.followers-per-social-media .main-card.facebook .main-card__user::before {
+  content: "\f082";
+  color: #178FF5;
+}
+
+.followers-per-social-media .main-card.twitter {
+  border-color: #1DA1F2;
+}
+
+.followers-per-social-media .main-card.twitter .main-card__user::before {
+  content: "\f099";
+  color: #1DA1F2;
+}
+
+.followers-per-social-media .main-card.instagram {
+  height: 237px;
+  border: none;
+  position: relative;
+  top: 5px;
+  margin: 0;
+}
+
+.followers-per-social-media .main-card.instagram .main-card__user::before {
+  background: linear-gradient(135deg, #df4896 0%, #ee877e 49%, #fdc366 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  content: "\f16d";
+}
+
+.followers-per-social-media .main-card.youtube {
+  border-color: #C4032B;
+}
+
+.followers-per-social-media .main-card.youtube .main-card__user::before {
+  content: "\f431";
+  color: #C4032B;
+}
+
+.followers-per-social-media .gradient-border {
+  background: linear-gradient(135deg, #df4896 0%, #ee877e 49%, #fdc366 100%);
+  width: 100%;
+  height: 242px;
+  height: auto;
+  position: relative;
+  border-radius: 12px;
+  margin: 0 0 24px;
+}
+
+.overview {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(326px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+  padding: 0 25px 46px;
+}
+
+.overview__heading {
+  color: #63687D;
+  font-weight: 700;
+  line-height: 29px;
+  margin-bottom: 27px;
+  grid-column: 1 / -1;
+}
+
+.overview .sub-card {
+  border: none;
+  border-radius: 10px;
+  background-color: #F1F3FA;
+  margin-bottom: 1rem;
+  padding: 27px 24px 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 1fr 0.3fr;
+      grid-template-columns: 0.3fr 1fr 0.3fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.overview .sub-card__heading {
+  color: #63687D;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+}
+
+.overview .sub-card__today-num {
+  font-size: 2rem;
+  line-height: 38.7px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.overview .sub-card .fab {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.overview .sub-card .fab.fa-gradient {
+  background: linear-gradient(135deg, #df4896 0%, #ee877e 49%, #fdc366 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overview .sub-card__percentage {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.overview .sub-card__percentage.positive {
+  color: #1EB589;
+}
+
+.overview .sub-card__percentage.positive::before {
+  content: '\f106';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+.overview .sub-card__percentage.negative {
+  color: #DC414C;
+}
+
+.overview .sub-card__percentage.negative::before {
+  content: '\f107';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 5px;
+}
+
+@media all and (min-width: 702px) {
+  .followers-per-social-media, .overview {
+    -webkit-column-gap: 30px;
+            column-gap: 30px;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  header, .followers-per-social-media, .overview {
+    padding: 36px 13%;
+  }
+  header {
+    padding-bottom: 150px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  header .dark-mode-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  header .header-content {
+    border: none;
+    margin: 0;
+  }
+  header .header-content .main-heading {
+    font-size: 1.75rem;
+  }
+  header .dark-mode-container {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  header .dark-mode-container .dark-mode__span {
+    color: #848484;
+    padding-right: 13px;
+  }
+  main {
+    bottom: 9.5rem;
+  }
+  .overview .sub-card {
+    margin-bottom: 24px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

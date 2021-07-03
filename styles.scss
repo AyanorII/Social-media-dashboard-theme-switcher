@@ -1,0 +1,388 @@
+// General Styling
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #1D1F29;
+    line-height: 29.05px;
+}
+
+span {
+    color: #1D1F29;
+}
+
+.facebook {
+    color: #178FF5;
+}
+
+.instagram {
+    color: linear-gradient(135deg, rgba(223,72,150,1) 0%, rgba(238,135,126,1) 49%, rgba(253,195,102,1) 100%);
+}
+
+.twitter {
+    color: #1DA1F2;
+}
+
+.youtube {
+    color: #C4032B;
+}
+
+// Dark Mode
+body.dark-mode, header.dark-mode {
+    background-color: #20222F;
+}
+
+.main-card.dark-mode, .sub-card.dark-mode {
+    background-color: #252B42 !important;
+}
+
+span.dark-mode, p.dark-mode{
+    color: #8C98C6;
+}
+
+.main-heading.dark-mode, .main-card__followers-num.dark-mode, .sub-card__today-num.dark-mode {
+    color: #FFF;
+}
+
+// Header
+header {
+    background-color: #F7F9FF;
+    padding: 36px 25px 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 0 0 30px 30px;
+    // position: absolute;
+    // width: 100%;
+    // // z-index: 0;
+
+    .header-content {
+        width: 100%;
+        border-bottom: 1px solid #848BAB;
+        margin-bottom: 1rem;
+
+
+        .main-heading {
+            font-weight: 700;
+
+            &.dark-mode {
+                color: #FFF;
+            }
+        }
+
+        .total-followers {
+            &.dark-mode {
+                color: #8C98C6;
+            }
+        }
+    }
+
+    .total-followers {
+        color: #63687D;
+        line-height: 17px;
+    }
+
+    .dark-mode-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #flexSwitchCheckDefault {
+            width: 2.7rem;
+            height: 1.5rem;
+            box-shadow: none;
+            background-color: #AEB3CB;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+            
+            &:checked {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e"), 
+                linear-gradient(135deg, rgba(64,219,130,1) 0%, rgba(56,143,231,1) 100%);
+                background-color: rgb(255, 255, 255);
+                border: none;
+            }
+        }        
+    }
+}
+
+// Main
+main {
+    position: relative;
+    bottom: 2.8rem;
+}
+.followers-per-social-media {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+    padding: 0 25px 46px;
+
+    .main-card {
+        padding: 32px 0 24px;
+        margin-bottom: 24px;
+        border: none;
+        border-top: 5px solid;
+        border-radius: 5px;
+        background-color: #F1F3FA;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__user {
+            font-size: 12px;
+
+            &::before {
+                font-family: "Font Awesome 5 Brands";
+                font-weight: 400;
+                font-size: 1.6rem;
+                padding-right: 10px;
+                position: relative;
+                top: 5px
+            }
+        }
+
+        &__followers-num {
+            font-size: 3.5rem;
+            line-height: 3rem;
+            letter-spacing: -2px;
+            margin: 28px 0 9px;
+        }
+
+        &__followers-type {
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 5px;
+            line-height: 14.5px;
+            color: #63687D;
+            margin-bottom: 25px;
+        }
+
+        &__followers-today {
+            font-size: 12px;
+
+            &.positive {
+                color: #1EB589;
+
+                &::before {
+                    content: '\f106';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    padding-right: 5px;
+                }
+            }
+
+            &.negative {
+                color: #DC414C;
+
+                &::before {
+                    content: '\f107';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    padding-right: 5px;
+                }
+            }
+        }
+
+        &.facebook {
+            border-color: #178FF5;
+
+            .main-card__user::before {
+                content: "\f082";
+                color: #178FF5;
+            }
+        }
+
+        &.twitter {
+            border-color: #1DA1F2;
+
+            .main-card__user::before {
+                content: "\f099";
+                color: #1DA1F2;
+            }
+        }
+
+        &.instagram {
+            height: 237px;
+            border: none;
+            position: relative;
+            top: 5px;
+            margin: 0;
+            
+            .main-card__user::before {
+                background: linear-gradient(135deg, rgba(223,72,150,1) 0%, rgba(238,135,126,1) 49%, rgba(253,195,102,1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                content: "\f16d";
+            }
+        }
+        
+        &.youtube {
+            border-color: #C4032B;
+
+            .main-card__user::before {
+                content: "\f431";
+                color: #C4032B;
+            }
+        }
+    }
+
+    /*It's not possible to create a gradient colored border, so
+    I had to wrap it in a div, give it the gradient color as the background
+    and use position relative to adjust*/
+    .gradient-border {
+        background: linear-gradient(135deg, rgba(223,72,150,1) 0%, rgba(238,135,126,1) 49%, rgba(253,195,102,1) 100%);
+        width: 100%;
+        height: 242px;
+        height: auto;
+        position: relative;
+        border-radius: 12px;
+        margin: 0 0 24px;
+    }
+}
+
+.overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
+    padding: 0 25px 46px;
+
+    &__heading {
+        color: #63687D;
+        font-weight: 700;
+        line-height: 29px;
+        margin-bottom: 27px;
+        grid-column: 1 / -1;
+    }
+
+    .sub-card {
+        border: none;
+        border-radius: 10px;
+        background-color: #F1F3FA;
+        margin-bottom: 1rem;
+        padding: 27px 24px 20px;
+        display: grid;
+        grid-template-columns: 0.3fr 1fr 0.3fr;
+        grid-template-rows: 1fr 1fr;
+
+        &__heading {
+            color: #63687D;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &__today-num {
+            font-size: 2rem;
+            line-height: 38.7px;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            align-self: end;
+        }
+
+        .fab {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+            justify-self: center;
+
+            &.fa-gradient {
+                background: linear-gradient(135deg, rgba(223,72,150,1) 0%, rgba(238,135,126,1) 49%, rgba(253,195,102,1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        &__percentage {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            align-self: end;
+
+            &.positive {
+                color: #1EB589;
+                
+                &::before {
+                    content: '\f106';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    padding-right: 5px;
+                }
+            }
+
+            &.negative {
+                color: #DC414C;
+
+                &::before {
+                    content: '\f107';
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 702px) {
+    .followers-per-social-media, .overview {
+        column-gap: 30px;
+    }
+}
+
+@media all and (min-width: 1440px) {
+
+    header, .followers-per-social-media, .overview {
+        padding: 36px 13%;
+    }
+
+    header { 
+        padding-bottom: 150px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .dark-mode-container {
+            justify-content: flex-end;
+        }
+
+        .header-content {
+            border: none;
+            margin: 0;
+            
+            .main-heading {
+                font-size: 1.75rem;
+            }
+        }
+
+        .dark-mode-container {
+            align-self: center;
+            .dark-mode__span {
+                color: #848484;
+                padding-right: 13px;
+            }
+        }
+    }
+
+    main {
+        bottom: 9.5rem;
+    }
+
+    .overview {
+        .sub-card {
+            margin-bottom: 24px;
+        }
+    }
+}
